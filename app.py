@@ -55,13 +55,13 @@ def annotate_video(video_path, output_path):
     out = cv2.VideoWriter(output_path, cv2.VideoWriter_fourcc(
         *'H264'), fps, (frame_width, frame_height))
 
-    # while cap.isOpened():
-    #     ret, frame = cap.read()
-    #     if not ret:
-    #         break
-    #     results = model.predict(frame, conf=0.85, save=False)
-    #     annotated_frame = annotate_image(frame.copy(), results)
-    #     out.write(annotated_frame)
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            break
+        results = model.predict(frame, conf=0.85, save=False)
+        annotated_frame = annotate_image(frame.copy(), results)
+        out.write(annotated_frame)
 
     cap.release()
     out.release()
@@ -119,7 +119,7 @@ def main():
                     annotate_video(video_path, output_path)
                     st.success("Video processing complete!")
                 os.remove(video_path)
-                #st.video(output_path)
+                st.video(output_path)
             else:
                 image = Image.open(uploaded_file)
                 image_np = np.array(image)
