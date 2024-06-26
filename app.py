@@ -160,24 +160,7 @@ def main():
             get_nutrition_info(query)
 
     elif option == 'Live Webcam Inference':
-        st.sidebar.markdown("### Live Webcam Inference")
-        cap = cv2.VideoCapture(0)
-        if not cap.isOpened():
-            st.error("Error: Could not open webcam.")
-            return
-
-        stframe = st.empty()
-        while cap.isOpened():
-            ret, frame = cap.read()
-            if not ret:
-                st.error("Error: Failed to capture image from webcam.")
-                break
-            results = model.predict(frame, conf=0.65, save=False)
-            annotated_frame = annotate_image(frame.copy(), results)
-            annotated_frame = cv2.cvtColor(annotated_frame, cv2.COLOR_BGR2RGB)
-            stframe.image(annotated_frame, channels="RGB")
-        cap.release()
-        cv2.destroyAllWindows()
+        st.sidebar.markdown("### Live Webcam Inference(Coming Soon)")
 
 
 if __name__ == '__main__':

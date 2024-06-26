@@ -43,3 +43,4 @@ runs/detect/train4/weights/model_artifacts.json
 runs/detect/train4/weights/roboflow_deploy.zip
 runs/detect/train4/weights/state_dict.pt
 runs/detect/train4/weights/last.pt
+app copy.py
