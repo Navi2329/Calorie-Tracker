@@ -8,5 +8,10 @@ runs/detect/predict
 runs/detect/predict2
 runs/detect/predict3
 runs/detect/predict4
+runs/detect/train8
+runs/detect/train9
 literature review.txt
 .streamlit/secrets.toml
+yolov8x.pt
+yolov9m.pt
+yolov10x.pt
