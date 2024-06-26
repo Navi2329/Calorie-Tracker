@@ -53,7 +53,7 @@ def annotate_video(video_path, output_path):
     frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = int(cap.get(cv2.CAP_PROP_FPS))
     out = cv2.VideoWriter(output_path, cv2.VideoWriter_fourcc(
-        *'H264'), fps, (frame_width, frame_height))
+        *'mp4v'), fps, (frame_width, frame_height))
 
     while cap.isOpened():
         ret, frame = cap.read()
