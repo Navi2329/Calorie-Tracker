@@ -65,7 +65,6 @@ def annotate_video(video_path, output_path):
 
     cap.release()
     out.release()
-    cv2.destroyAllWindows()
 
 
 def get_nutrition_info(query):
